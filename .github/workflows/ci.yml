@@ -19,7 +19,6 @@ jobs:
     - uses: actions-rust-lang/setup-rust-toolchain@v1
       with:
         components: rustfmt
-
     - name: fmt
       run: cargo fmt --all --check
 
@@ -109,6 +108,10 @@ jobs:
       with:
         name: my-app-full
         path: my-app
+
+# SM2025 just print the rust version
+    - name: Check Rust version
+      run: rustc --version
 
     - name: migrate
       run: |
